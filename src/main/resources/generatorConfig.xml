@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+  <classPathEntry location="E:\code\java\lib\mysql-connector-java\mysql-connector-java-5.1.38\mysql-connector-java-5.1.38-bin.jar" />
+
+  <context id="houseTables" targetRuntime="MyBatis3">
+    <!-- <commentGenerator>
+      <property name="suppressAllComments" value="false" />
+    </commentGenerator> -->
+    
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql://localhost:3306/house"
+        userId="root"
+        password="passwordword">
+    </jdbcConnection>
+
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+
+    <javaModelGenerator targetPackage="io.jxunix.domain" targetProject="E:\Project\git\Inventory\src\main\java">
+      <property name="enableSubPackages" value="false" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <sqlMapGenerator targetPackage="io.jxunix.mapper"  targetProject="E:\Project\git\Inventory\src\main\resources">
+      <property name="enableSubPackages" value="false" />
+    </sqlMapGenerator>
+
+    <javaClientGenerator type="XMLMAPPER" targetPackage="io.jxunix.mapper"  targetProject="E:\Project\git\Inventory\src\main\java">
+      <property name="enableSubPackages" value="false" />
+    </javaClientGenerator>
+
+    <table tableName="admin" domainObjectName="Admin">
+      <!-- <columnOverride column="adminID" property="adminId" /> -->
+      <!-- <generatedKey column="adminID" sqlStatement="MySql" identity="true" />
+      <columnOverride column="DATE_FIELD" property="startDate" />
+      <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" /> -->
+    </table>
+    <table tableName="category" domainObjectName="Category"></table>
+    <table tableName="goods" domainObjectName="Goods"></table>
+    <table tableName="purchase_order" domainObjectName="PurchaseOrder"></table>
+    <table tableName="sale_order" domainObjectName="SaleOrder"></table>
+    <table tableName="purchase_return_order" domainObjectName="PurchaseReturnOrder"></table>
+    <table tableName="sale_return_order" domainObjectName="SaleReturnOrder"></table>
+    <table tableName="shopper" domainObjectName="Shopper"></table>
+    <table tableName="supplier" domainObjectName="Supplier"></table>
+    <table tableName="user" domainObjectName="User"></table>
+
+  </context>
+</generatorConfiguration>
