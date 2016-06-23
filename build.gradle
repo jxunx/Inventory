@@ -34,6 +34,16 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
+compileJava {
+    //enable compilation in a separate daemon process
+    options.fork = true
+    //enable incremental compilation
+    options.incremental = true
+}
+
+bootRun {
+    addResources = true
+}
 
 eclipse {
 	classpath {
